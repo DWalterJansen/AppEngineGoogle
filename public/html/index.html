@@ -1,30 +1,32 @@
 <html lang="en">
 	<head>
-		<title>Agora Group Video Chat Demo</title>
+		<title>Videochamada do Dr.presente</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
 		<div class="container-fluid p-0">
 			<div id="main-container">
+				<!--
 				<div id="screen-share-btn-container" class="col-2 float-right text-right mt-2">
 					<button id="screen-share-btn"  type="button" class="btn btn-lg">
 						<i id="screen-share-icon" class="fas fa-share-square"></i>
 					</button>
 				</div>
-				<div id="buttons-container" class="row justify-content-center mt-3">
-					<div class="col-md-2 text-center">
-						<button id="mic-btn" type="button" class="btn btn-block btn-dark btn-lg">
+				-->
+				<div id="buttons-container" class="row justify-content-center fixed-bottom mb-5">
+					<div class="col-sm-1 text-center">
+						<button id="mic-btn" type="button" class="btn btn-circle btn-dark btn-xl">
 							<i id="mic-icon" class="fas fa-microphone"></i>
 						</button>
 					</div>
-					<div class="col-md-2 text-center">
-						<button id="video-btn"  type="button" class="btn btn-block btn-dark btn-lg">
+					<div class="col-sm-1 text-center">
+						<button id="video-btn"  type="button" class="btn btn-circle btn-dark btn-xl btn-lg">
 							<i id="video-icon" class="fas fa-video"></i>
 						</button>
 					</div>
-					<div class="col-md-2 text-center">
-						<button id="exit-btn"  type="button" class="btn btn-block btn-danger btn-lg">
+					<div class="col-sm-1 text-center">
+						<button id="exit-btn"  type="button" class="btn btn-circle btn-danger btn-xl">
 							<i id="exit-icon" class="fas fa-phone-slash"></i>
 						</button>
 					</div>
@@ -48,17 +50,17 @@
 				</div>
 			</div>
 		</div>
-		<!-- Modal -->
+		<!--Modal -->
 		<div class="modal fade" id="modalForm">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header text-center">
-						<h4 class="modal-title w-100 font-weight-bold">Join Channel</h4>
+						<h4 class="modal-title w-100 font-weight-bold">Consulta</h4>
 						<button type="button" class="close" data-dismiss="modal">
 							<span>&times;</span>
 						</button>
 					</div>
-					<div class="modal-body mx-3">
+					<!--<div class="modal-body mx-3">
 						<div class="md-form mb-5">
 							<input type="text" id="form-appid" class="form-control">
 							<label for="form-appid">Agora AppId</label>
@@ -69,9 +71,9 @@
 							<label for="form-channel">Channel</label>
 						</div>
 		
-					</div>
+					</div>-->
 					<div class="modal-footer d-flex justify-content-center">
-						<button id="join-channel" class="btn btn-default">Join Channel</button>
+						<button id="join-channel" class="btn btn-box btn-danger btn-primary">Entrar na consulta</button>
 					</div>
 				</div>
 			</div>

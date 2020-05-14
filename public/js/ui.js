@@ -1,8 +1,9 @@
+const myChannel = 'help';
 
 // join channel modal
 $( "#join-channel" ).click(function( event ) {
-  var agoraAppId = $('#form-appid').val();
-  var channelName = $('#form-channel').val();
+  var agoraAppId = 'ed4724d610884635a9bfa8e85fd1822c';
+  var channelName = 'help';
   initClientAndJoinChannel(agoraAppId, channelName);
   $("#modalForm").modal("hide");
 });
