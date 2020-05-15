@@ -1,19 +1,61 @@
+#imagem {
+  padding-left: 50px;
+}
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+  margin: auto;
+}
+.btn-circle.btn-xl {
+  width: 70px;
+  height: 70px;
+  padding: 10px 16px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 35px;
+}
+
 
 #buttons-container {
   position: absolute;
-  z-index: 2;  
+  z-index: 3;  
   width: 100vw;
-  padding: 0%;
+  height: 20vh;  
+}
+.middle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #full-screen-video {
   position: absolute;
   width: 100vw;
   height: 100vh;
+  background-color:black;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(/public/img/drsf.png);
 }
 
 #lower-video-bar {
-  height: 20vh;
+  max-height: 30vh;
+  height: 15vh;
+  width: auto;
+  background-color: #0093d9;
 }
 
 #local-stream-container { 
@@ -51,7 +93,7 @@
   left: 0;
   color: #d9d9d9;
   font-size: 2em;
-  padding: 0 0 3px 3px;
+  padding: 3px 0 3px 3px;
   display: none;
 } 
 
@@ -84,28 +126,9 @@
   z-index: 99;
 }
 
-.btn-circle {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  padding: 6px 0;
-  font-size: 12px;
-  line-height: 1.428571429;
-  border-radius: 15px;
-}
-.btn-circle.btn-lg {
-  width: 50px;
-  height: 50px;
-  padding: 10px 16px;
-  font-size: 18px;
-  line-height: 1.33;
-  border-radius: 25px;
-}
-.btn-circle.btn-xl {
-  width: 70px;
-  height: 70px;
-  padding: 10px 16px;
-  font-size: 24px;
-  line-height: 1.33;
-  border-radius: 35px;
+@media (min-width: 576px) {
+  .imagem.logo{
+    width: 64px;
+    width: 64px;
+  }
 }

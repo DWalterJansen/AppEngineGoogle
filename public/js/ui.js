@@ -10,11 +10,12 @@ $( "#join-channel" ).click(function( event ) {
 
 // UI buttons
 function enableUiControls(localStream) {
-
+  
   $("#mic-btn").prop("disabled", false);
   $("#video-btn").prop("disabled", false);
   $("#screen-share-btn").prop("disabled", false);
   $("#exit-btn").prop("disabled", false);
+
 
   $("#mic-btn").click(function(){
     toggleMic(localStream);
