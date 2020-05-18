@@ -11,15 +11,28 @@
 		<div id="main-container">
 			<div id="full-screen-video"></div>
 
+			<div id = 'imagem-sm' class="col-sm-4 col-lg-3 marcadagua middle ">
+				<img id ="logo" src="/public/img/logo.png">
+			</div>
+			<div id="local-stream-container-sm">
+				<div id="mute-overlay-sm" class="col">
+					<i id="mic-icon-sm" class="fas fa-microphone-slash"></i>
+				</div>
+				<div id="no-local-video-sm" class="col text-center">
+					<i id="user-icon-sm" class="fas fa-user"></i>
+				</div>
+				<div id="local-video-sm" class="col p-0"></div>
+			</div>
+
 			<div id="lower-video-bar" class="row fixed-bottom mb-0" style = "margin: 0 auto;">
 				
 				<!--COLUNA DE IMAGENS-->
-				<div id = 'imagem' class="col-lg-3 middle ">
+				<div id = 'imagem' class="col-sm-4 col-lg-3 middle ">
 					<img id ="logo" src="/public/img/logo.png">
 				</div>
 
 				<!--COLUNA DE BOTOES-->
-				<div id = "buttons" class="col-lg-3 middle" style = "margin: 0 auto;">
+				<div id = "buttons" class="col-sm-4 col-lg-3 middle" style = "margin: 0 auto;">
 					<div class="col-xl-4 text-center middle">
 						<button id="mic-btn" type="button" class="btn btn-circle btn-dark btn-xl">
 							<i id="mic-icon" class="fas fa-microphone middle"></i>
@@ -39,7 +52,7 @@
 				</div>
 
 				<!--COLUNA DE STREAMING-->
-				<div id="local-stream-container" class="col-lg-3 ml-0 mb-0">
+				<div id="local-stream-container" class="col-sm-4 col-lg-3 ml-0 mb-0">
 					<div id="mute-overlay" class="col">
 						<i id="mic-icon" class="fas fa-microphone-slash"></i>
 					</div>
@@ -53,14 +66,12 @@
 		</div>
 	</div>
 	<!-- Modal -->
-	<div class="modal fade" id="modalForm">
+	<div class="modal fade" id="modalForm" data-backdrop="static">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header text-center">
-					<h4 class="modal-title w-100 font-weight-bold">Join Channel</h4>
-					<button type="button" class="close" data-dismiss="modal">
-						<span>&times;</span>
-					</button>
+					<h4 class="modal-title w-100 font-weight-bold">Consulta</h4>
+					
 				</div>
 				<!--
 				<div class="modal-body mx-3">
@@ -77,7 +88,7 @@
 				</div>
 				-->
 				<div class="modal-footer d-flex justify-content-center">
-					<button id="join-channel" class="btn btn-default">Join Channel</button>
+					<button id="join-channel" class="btn btn-default">Entrar na consulta</button>
 				</div>
 			</div>
 		</div>

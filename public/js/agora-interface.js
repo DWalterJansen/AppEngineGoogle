@@ -180,7 +180,14 @@ function initLocalStream(hascam, hasmic){
   localStream.init(function () {
     console.log("getUserMedia successfully");
     // TODO: add check for other streams. play local stream full size if alone in channel
-    localStream.play('local-video'); // play the given stream within the local-video div
+    if($(window).height()<=760)
+    {
+      localStream.play('local-video-sm'); // play the given stream within the local-video div
+    }
+    else{
+      localStream.play('local-video'); // play the given stream within the local-video div
+    }
+    
 
     // publish local stream
     client.publish(localStream, function (err) {
@@ -325,8 +332,15 @@ function leaveChannel() {
     $("#screen-share-btn").prop("disabled", true);
     $("#exit-btn").prop("disabled", true);
     // hide the mute/no-video overlays
-    toggleVisibility("#mute-overlay", false);
-    toggleVisibility("#no-local-video", false);
+    if($(window).height()<=760){
+      toggleVisibility("#mute-overlay-sm", false);
+      toggleVisibility("#no-local-video-sm", false);
+    }
+    else{
+      toggleVisibility("#mute-overlay", false);
+      toggleVisibility("#no-local-video", false);
+    }
+    
     // show the modal overlay to join
     $("#modalForm").modal("show");
   }, function (err) {

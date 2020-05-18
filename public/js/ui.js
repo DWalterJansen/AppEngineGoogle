@@ -1,7 +1,7 @@
 const myChannel = 'help';
 
 // join channel modal
-$( "#join-channel" ).click(function( event ) {
+$("#join-channel").click(function (event) {
   var agoraAppId = 'ed4724d610884635a9bfa8e85fd1822c';
   var channelName = 'help';
   initClientAndJoinChannel(agoraAppId, channelName);
@@ -10,38 +10,38 @@ $( "#join-channel" ).click(function( event ) {
 
 // UI buttons
 function enableUiControls(localStream) {
-  
+
   $("#mic-btn").prop("disabled", false);
   $("#video-btn").prop("disabled", false);
   $("#screen-share-btn").prop("disabled", false);
   $("#exit-btn").prop("disabled", false);
 
 
-  $("#mic-btn").click(function(){
+  $("#mic-btn").click(function () {
     toggleMic(localStream);
   });
 
-  $("#video-btn").click(function(){
+  $("#video-btn").click(function () {
     toggleVideo(localStream);
   });
 
-  $("#screen-share-btn").click(function(){
+  $("#screen-share-btn").click(function () {
     toggleScreenShareBtn(); // set screen share button icon
-    $("#screen-share-btn").prop("disabled",true); // disable the button on click
-    if(screenShareActive){
+    $("#screen-share-btn").prop("disabled", true); // disable the button on click
+    if (screenShareActive) {
       stopScreenShare();
     } else {
-      initScreenShare(); 
+      initScreenShare();
     }
   });
 
-  $("#exit-btn").click(function(){
+  $("#exit-btn").click(function () {
     console.log("so sad to see you leave the channel");
-    leaveChannel(); 
+    leaveChannel();
   });
 
   // keyboard listeners 
-  $(document).keypress(function(e) {
+  $(document).keypress(function (e) {
     switch (e.key) {
       case "m":
         console.log("squick toggle the mic");
@@ -50,32 +50,32 @@ function enableUiControls(localStream) {
       case "v":
         console.log("quick toggle the video");
         toggleVideo(localStream);
-        break; 
+        break;
       case "s":
         console.log("initializing screen share");
         toggleScreenShareBtn(); // set screen share button icon
-        $("#screen-share-btn").prop("disabled",true); // disable the button on click
-        if(screenShareActive){
+        $("#screen-share-btn").prop("disabled", true); // disable the button on click
+        if (screenShareActive) {
           stopScreenShare();
         } else {
-          initScreenShare(); 
+          initScreenShare();
         }
-        break;  
+        break;
       case "q":
         console.log("so sad to see you quit the channel");
-        leaveChannel(); 
-        break;   
+        leaveChannel();
+        break;
       default:  // do nothing
     }
 
     // (for testing) 
-    if(e.key === "r") { 
+    if (e.key === "r") {
       window.history.back(); // quick reset
     }
   });
 }
 
-function toggleBtn(btn){
+function toggleBtn(btn) {
   btn.toggleClass('btn-dark').toggleClass('btn-danger');
 }
 
@@ -93,25 +93,53 @@ function toggleVisibility(elementID, visible) {
 }
 
 function toggleMic(localStream) {
-  toggleBtn($("#mic-btn")); // toggle button colors
-  $("#mic-icon").toggleClass('fa-microphone').toggleClass('fa-microphone-slash'); // toggle the mic icon
-  if ($("#mic-icon").hasClass('fa-microphone')) {
-    localStream.unmuteAudio(); // enable the local mic
-    toggleVisibility("#mute-overlay", false); // hide the muted mic icon
-  } else {
-    localStream.muteAudio(); // mute the local mic
-    toggleVisibility("#mute-overlay", true); // show the muted mic icon
+
+  if ($(window).height() <= 760) {
+    toggleBtn($("#mic-btn")); // toggle button colors
+    $("#mic-icon").toggleClass('fa-microphone').toggleClass('fa-microphone-slash'); // toggle the mic icon
+    if ($("#mic-icon").hasClass('fa-microphone')) {
+      localStream.unmuteAudio(); // enable the local mic
+      toggleVisibility("#mute-overlay-sm", false); // hide the muted mic icon
+    } else {
+      localStream.muteAudio(); // mute the local mic
+      toggleVisibility("#mute-overlay-sm", true); // show the muted mic icon
+    }
+  }
+  else {
+    toggleBtn($("#mic-btn")); // toggle button colors
+    $("#mic-icon").toggleClass('fa-microphone').toggleClass('fa-microphone-slash'); // toggle the mic icon
+    if ($("#mic-icon").hasClass('fa-microphone')) {
+      localStream.unmuteAudio(); // enable the local mic
+      toggleVisibility("#mute-overlay", false); // hide the muted mic icon
+    } else {
+      localStream.muteAudio(); // mute the local mic
+      toggleVisibility("#mute-overlay", true); // show the muted mic icon
+    }
   }
 }
 
 function toggleVideo(localStream) {
-  toggleBtn($("#video-btn")); // toggle button colors
-  $("#video-icon").toggleClass('fa-video').toggleClass('fa-video-slash'); // toggle the video icon
-  if ($("#video-icon").hasClass('fa-video')) {
-    localStream.unmuteVideo(); // enable the local video
-    toggleVisibility("#no-local-video", false); // hide the user icon when video is enabled
-  } else {
-    localStream.muteVideo(); // disable the local video
-    toggleVisibility("#no-local-video", true); // show the user icon when video is disabled
+  if ($(window).height() <= 760) {
+    toggleBtn($("#video-btn")); // toggle button colors
+    $("#video-icon").toggleClass('fa-video').toggleClass('fa-video-slash'); // toggle the video icon
+    if ($("#video-icon").hasClass('fa-video')) {
+      localStream.unmuteVideo(); // enable the local video
+      toggleVisibility("#no-local-video-sm", false); // hide the user icon when video is enabled
+    } else {
+      localStream.muteVideo(); // disable the local video
+      toggleVisibility("#no-local-video-sm", true); // show the user icon when video is disabled
+    }
   }
+  else {
+    toggleBtn($("#video-btn")); // toggle button colors
+    $("#video-icon").toggleClass('fa-video').toggleClass('fa-video-slash'); // toggle the video icon
+    if ($("#video-icon").hasClass('fa-video')) {
+      localStream.unmuteVideo(); // enable the local video
+      toggleVisibility("#no-local-video", false); // hide the user icon when video is enabled
+    } else {
+      localStream.muteVideo(); // disable the local video
+      toggleVisibility("#no-local-video", true); // show the user icon when video is disabled
+    }
+  }
+
 }
