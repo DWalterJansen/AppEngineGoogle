@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Consulta Dr. Presente</title>
+
+    <!-- Adicionando o favicon -->
+    <link rel="shortcut icon" type="image/png" href="/public/img/icon_DrPresente.png">
+
+    <!-- Adicionando o CSS -->
+    <link rel="stylesheet" type="text/css" href="/public/css/stylePre.css" />
+    <!-- Adicionando o Bootstrap -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Inicio cabeçalho -->
+    <header>
+        <!-- Inicio navegação -->
+        <nav class="navbar navbar-expand-sm navbar-light">
+            <!-- Inicio container -->
+            <div id="clogo" class="container">
+                <a id="alogo" href="http://drpresente.com" class="navbar-brand">
+                    <img id="logo" title="Logo Dr.Presente" src="/public/img/logo.png">
+                </a>
+
+                <!-- Inicio menu - links -->
+                <!-- <div class="collapse navbar-collapse" id="nav-principal"> -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="#" class="btn btn-outline-light">Ajuda</a>
+                    </li>
+                </ul>
+                <!-- </div> -->
+                <!-- //Fim menu - links -->
+            </div>
+            <!-- //Fim container -->
+        </nav>
+    </header>
+    <!-- //Fim cabeçalho -->
+
+    <!-- Início seção home -->
+    <div id="home">
+        <div class="container" class="components-on-middle">
+            <div class="row pt-4">
+                <!-- Inicio do countdown -->
+
+                <!-- <div id="Text" class="align-self-center">
+                    Sua consulta começará em:
+                </div> -->
+                <div id="inside-container" class="col-md-6 pt-5">
+                    <h1 id="text-countdown" class="display-6 pb-2"></h1>
+
+                    <!--div class="w-100"></div-->
+                    <div id="loader" class="loader components-on-middle"></div>
+                    <a id="linker" >
+                        <div id="clock" class="col components-on-middle">
+                            <div id="elements_clock" >
+                                <div id="day_wrapper" class="counter_part">
+                                    <div id="days" class="unit_value components-on-middle font-dhms"></div>
+                                    <div class="unit_name components-on-middle font-word">
+                                        Dias</div>
+                                </div>
+                                <div id="colon_day" class="counter_part">
+                                    <div class="unit_value font-dhms"> : </div>
+                                    <div class="unit_name font-word">&nbsp;</div>
+                                </div>
+                                <div id="hours_wrapper" class="counter_part">
+                                    <div id="hours" class="unit_value components-on-middle font-dhms"></div>
+                                    <div class="unit_name components-on-middle font-word">
+                                        Horas</div>
+                                </div>
+                                <div id="colon_hour" class="counter_part">
+                                    <div class="unit_value font-dhms"> : </div>
+                                    <div class="unit_name font-word">&nbsp;</div>
+                                </div>
+                                <div id="minute_wrapper" class="counter_part">
+                                    <div id="minutes" class="unit_value  components-on-middle font-dhms"></div>
+                                    <div class="unit_name components-on-middle font-word">
+                                        Minutos</div>
+                                </div>
+                                <div id="colon_minute" class="counter_part">
+                                    <div class="unit_value font-dhms"> : </div>
+                                    <div class="unit_name  font-word">&nbsp;</div>
+                                </div>
+                                <div id="second_wrapper" class="counter_part">
+                                    <div id="seconds" class="unit_value components-on-middle font-dhms"></div>
+                                    <div class="unit_name components-on-middle font-word">
+                                        Segundos</div>
+                                </div>
+                            </div>
+                            <div id="teste_botao" class="row desativar">
+                                
+                                <div id="logo_icon" class="col components-on-middle" >
+                                    <!-- <img id="logo_consulta" src="../img/icon1.png" width="100%" > -->
+                                    <i id="icone" class="fas fa-notes-medical " ></i>
+                                </div>
+
+                                <div id="mensagem" class="col components-on-middle">
+                                    <h1 id="div_consulta">IR PARA A CONSULTA</h1>
+                                </div>
+
+                                <!-- <div id="icon_medical_recorder" class="counter_part components-on-middle" style="padding: 0;">
+                                <img id="logo_consulta" src="../img/icon.png" width="10%">
+                            </div> 
+                            <div class="unit_name font-word">&nbsp;</div>
+
+                            <div id="div_consulta" class="counter_part components-on-middle">
+                                <div class="consulta components-on-middle">IR PARA <br>CONSULTA</div>
+                            </div>
+                            <div class="unit_name font-word">&nbsp;</div> -->
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- <div class="col-md-6 d-flex">
+                    <div class="align-self-center">
+                        <h1 id="text-countdown" class="display-6">Sua consulta começará em:</h1>
+
+                        <ul id="countdown-ul">
+                            <li class="countdown-li"><span id="days"></span>Dias</li>
+                            <li class="countdown-li"><span id="hours"></span>Horas</li>
+                            <li class="countdown-li"><span id="minutes"></span>Minutos</li>
+                            <li class="countdown-li"><span id="seconds"></span>Segundos</li>
+                        </ul>
+                    </div>
+                </div> -->
+                <!-- //Fim do countdown -->
+                <!-- Iniciar consulta -->
+                <!--div class="col-md-6 d-flex">
+                    <div class="align-self-center">
+                        <h1 id="text-countdown" class="display-6">Corra, sua consulta começou:</h1>
+
+                        <button type="button" id="consultastart" class="btn d-flex">
+                            <img id="logo" href="../img/icon_DrPresente.png">
+                            <a href="#">
+                                <h2 class="title-light text-dark"><span>IR PARA A CONSULTA</span></h2>
+                            </a>
+                        </button>
+                    </div>
+                </div>
+                <!-- //Fim do Iniciar consulta-->
+                <!-- Inicio imagem -->
+                <div class="col-md-6 d-md-block">
+                    <img id="DR" src="/public/img/banner-img.png" width="100%">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+<script src="/public/js/countdown-timer.js"></script>
+<link rel="stylesheet" type="text/css" href="/public/css/stylePre.css" />
+
+</html>
