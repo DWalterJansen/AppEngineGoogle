@@ -342,7 +342,8 @@ function leaveChannel() {
     }
     
     // show the modal overlay to join
-    $("#modalForm").modal("show");
+    // $("#modalForm").modal("show");
+    window.location.replace('http://localhost:8080/public/html/avaliacao.html');
   }, function (err) {
     console.log("client leave failed ", err); //error handling
   });
